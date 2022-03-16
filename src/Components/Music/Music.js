@@ -1,5 +1,12 @@
 import "./Music.css";
 
+
+fetch('https://ylgkc6ajqf.execute-api.eu-west-2.amazonaws.com/prod/music')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+
+
 let items = [
   { name: "PylonSong.mp3", display: "Prelude BWV 999 by J.S. Bach" },
   {

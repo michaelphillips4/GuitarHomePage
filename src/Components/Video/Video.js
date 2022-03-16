@@ -9,10 +9,10 @@ let itemList = items.map((item, index) => {
   return (
     <li key={index}>
       <h4>{item.name}</h4>
-      <iframe width="560" height="315" src={item.src} 
+      <iframe width="400" height="280" src={item.src} 
       title= {item.name}
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      frameBorder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
       </iframe>
     </li>
   );

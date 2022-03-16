@@ -5,9 +5,9 @@ import Video from "./Components/Video/Video.js";
 function App() {
   return (
     <>
-      <div class="main">
-        <div class="box">
-         Michael is avaliable for bookings for weddings and events in the South of England. He plays music from around the world and around the corner.
+      <div className="main">
+        <div className="box">
+         Michael is avaliable to book for weddings and events in the South of England. He plays music from around the world and around the corner.
          He plays either a classical guitar or a gretsch baritone electric Guitar. 
          He plays a varity of styles covering classical standards world and folk styles to acoustic covers.
          Along with his own compositions and improvisations. 
