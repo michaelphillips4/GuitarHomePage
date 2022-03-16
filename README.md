@@ -1,6 +1,10 @@
-# Simple Blog Template
-
-Using react.js and react-router-dom
+# Page for music.
+Reads files stored in an s3 bucket
+## Frount end:
+- react.js 
+- react-router-dom 
+## Back end: 
+- AWS lambda - api gateway - s3 bucket
 
 # Getting Started with Create React App
 
