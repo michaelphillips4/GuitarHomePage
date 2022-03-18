@@ -1,40 +1,74 @@
 import "./Music.css";
+import React from 'react';
 
 
-fetch('https://ylgkc6ajqf.execute-api.eu-west-2.amazonaws.com/prod/music')
-  .then(response => response.json())
-  .then(data => console.log(data));
+class Music extends React.Component {
+  constructor(props) {
+     super(props);
+     console.log("constuctor");
+     this.state = {
+      isLoaded: false,
+      items: []
+   }
+  }
 
+  setItems(remoteItems) {
+   console.log(remoteItems); 
+   let items = [];
+   for (let i = 0; i < remoteItems.length; i++) {
+    items.push(
+      {key : i, 
+        name : remoteItems[i].replace(/.mp3/,'').replace('Music/','').replace(/_/g,' '),
+        url : 'https://python-bucket-1.s3.eu-west-2.amazonaws.com/' + remoteItems[i]
+      })
+   
+  }
+  console.log(items); 
+    this.setState({
+       isLoaded: true,
+       items: items
+    });
+ }
 
-
-let items = [
-  { name: "PylonSong.mp3", display: "Prelude BWV 999 by J.S. Bach" },
-  {
-    name: "Alhambra.mp3",
-    display: "Recuerdos de la Alhambra by Francisco Tárrega",
-  },
-  { name: "PylonSong.mp3", display: " Etude E Minor by Mauro Giuliani" },
-  {
-    name: "Estudio.mp3",
-    display: "Estudio in E Minor for Classical Guitar by Francisco Tárrega",
-  },
-  { name: "GymnopedieNo1.mp3", display: "Gymnopedie No 1 by Erik Satie" },
-];
-
-let itemList = items.map((item, index) => {
-  return (
-    <li key={index}>
-      <h4>{item.display}</h4>
-      <audio controls>
-        <source src={item.name} type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-    </li>
-  );
-});
-
-function Music() {
-  return <ul>{itemList}</ul>;
+ fetchRemoteItems() {
+  fetch("https://ylgkc6ajqf.execute-api.eu-west-2.amazonaws.com/prod/music")
+     .then(res => res.json())
+     .then(
+        (result) => {
+          console.log(typeof(result.body)); 
+           this.setItems(JSON.parse(result.body));
+        },
+        (error) => {
+           this.setState({
+              isLoaded: false,
+              error
+           });
+        }
+     )
 }
+componentDidMount() { 
+  this.fetchRemoteItems(); 
+}
+render() {
+  console.log("render");
+  let list = [];
+  if (this.state.isLoaded) {
+     list = this.state.items.map((item) =>
+     <li key={item.key}>
+     <h4>{item.name}</h4>
+     <audio controls>
+       <source src={item.url} type="audio/mpeg" />
+       Your browser does not support the audio element.
+     </audio>
+   </li>
+     );
+  }
+  return (
+    <ul>{list}</ul>
+  );
+}
+
+}
+
 
 export default Music;

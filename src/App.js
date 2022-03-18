@@ -14,7 +14,7 @@ function App() {
          Michael is also interested in ambient and surf style guitar which he plays on the baritone guitar using various effect pedals and loops. 
          Please contact him directly for more details avaliability and prices.      
         </div>
-        <div>
+        <div className="panel-container" >
           <div className="panel-music">
             <h2>Music</h2>
             <Music />
