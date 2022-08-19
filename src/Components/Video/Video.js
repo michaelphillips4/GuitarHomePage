@@ -1,4 +1,3 @@
-import "./Video.css";
 
 let items = [
   { name: "More or less by Michael Phillips", src: "https://www.youtube.com/embed/LkHIdHt1rI4" },
@@ -19,7 +18,10 @@ let itemList = items.map((item, index) => {
 });
 
 function Video() {
-  return <ul>{itemList}</ul>;
+  return <>
+    <h3>Videos</h3>
+    <ul>{itemList}</ul>
+  </>
 }
 
   

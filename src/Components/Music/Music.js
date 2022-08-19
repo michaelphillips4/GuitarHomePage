@@ -1,4 +1,4 @@
-import "./Music.css";
+
 import React from 'react';
 
 
@@ -50,7 +50,6 @@ componentDidMount() {
   this.fetchRemoteItems(); 
 }
 render() {
-  console.log("render");
   let list = [];
   if (this.state.isLoaded) {
      list = this.state.items.map((item) =>
@@ -64,7 +63,10 @@ render() {
      );
   }
   return (
+    <>
+    <h3>Music</h3>
     <ul>{list}</ul>
+    </>
   );
 }
 
