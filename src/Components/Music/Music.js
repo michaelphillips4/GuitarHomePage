@@ -54,7 +54,7 @@ render() {
   if (this.state.isLoaded) {
      list = this.state.items.map((item) =>
      <li key={item.key}>
-     <h4>{item.name}</h4>
+     <p>{item.name}</p>
      <audio controls>
        <source src={item.url} type="audio/mpeg" />
        Your browser does not support the audio element.
@@ -64,8 +64,7 @@ render() {
   }
   return (
     <>
-    <h3>Music</h3>
-    <ul>{list}</ul>
+        <ul>{list}</ul>
     </>
   );
 }
