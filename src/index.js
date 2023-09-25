@@ -14,5 +14,6 @@ export default function Index() {
   );
 }
 
+
 ReactDOM.render(<Index />, document.getElementById("root"));
 
