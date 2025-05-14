@@ -1,14 +1,9 @@
-
-
-ul{
-list-style: none;
-padding-left: 0;
-margin-top: 50px;
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
-#top-part
-{ 
- 
+#top-part {
   margin-top: 20px;
 }
 
@@ -16,8 +11,8 @@ article {
   text-align: left;
 }
 
-.bio{
-  padding: 5px 30px 0px
+.bio {
+  padding: 5px 30px 0px;
 }
 
 .flex-container {
@@ -27,45 +22,34 @@ article {
 }
 
 .app-image {
-    width: 100%;
-    object-fit: contain;
-    margin-top: 10px;
-    border-radius: 12%;
+  width: 100%;
+  object-fit: contain;
+  margin-top: 10px;
+  border-radius: 12%;
 }
-
-
-
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
   .flex-container {
     flex-direction: column;
-    
   }
- .bio{
-  padding: 5px 0px 0px
+  .bio {
+    padding: 5px 0px 0px;
+  }
+
+  .youtube-video-container {
+    margin-top: 0px;
+    margin-left: 0px;
+  }
 }
-
-.youtube-video-container {
- 
-  margin-top: 0px;
- margin-left: 0px;
-
- 
-}
-
-}
-
-
 
 .youtube-video-container {
   position: relative;
   overflow: hidden;
   width: 100%;
   margin-top: 50px;
- margin-left: 200px;
- border-radius: 2%; 
- 
+  margin-left: 200px;
+  border-radius: 2%;
 }
 
 .youtube-video-container::after {
