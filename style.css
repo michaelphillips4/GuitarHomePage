@@ -13,6 +13,12 @@
       font-size: 1.5rem;
     }
 
+ p {
+margin-left: 25px;
+margin-right: 25px;
+    } 
+
+
     iframe {
       display: flex;
       justify-content: center;
