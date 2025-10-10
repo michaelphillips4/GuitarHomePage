@@ -1,0 +1,116 @@
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(white, #100c08);
+  --font-color: light-dark(#100c08, rgb(230, 230, 230));
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color:var(--font-color);
+    background: var(--bg);
+}
+
+main {
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2.85rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+p {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+
+iframe {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+audio {
+
+    padding-left: 20px;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin-right: 8px;
+
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+
+    .gallery-image {
+        max-width: 48%;
+        margin: 5px
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+
+        .gallery-image {
+            max-width: 90%;
+        }
+    }   
+
+}
+
+
+
+nav {
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333333;
+        display: flex;
+        justify-content: center;
+    }
+
+    ul li a {
+        display: block;
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    ul li a:hover {
+        background-color: #111111;
+    }
+
+
+}
